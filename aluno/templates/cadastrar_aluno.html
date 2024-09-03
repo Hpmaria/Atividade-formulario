@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <title>Matricula de Aluno</title>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      h2 {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+      .form-group label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+      }
+      .btn-primary {
+        background-color: #6c5ce7;
+        border-color: #6c5ce7;
+        padding: 10px 20px;
+        border-radius: 5px;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Matricula de Aluno</h2>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="{{ form.nome.id_for_label }}">Nome</label>
+          {{ form.nome }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.endereco.id_for_label }}">Endereço</label>
+          {{ form.endereco }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.cidade.id_for_label }}">Cidade</label>
+          {{ form.cidade }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.email.id_for_label }}">E-mail</label>
+          {{ form.email }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.curso.id_for_label }}">Curso</label>
+          {{ form.curso }}
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastro</button>
+      </form>
+    </div>
+  </body>
+</html>

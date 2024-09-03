@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <title>Lista de Alunos</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Lista de Alunos Cadastrados</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Cidade</th>
+            <th>E-mail</th>
+            <th>Curso</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for aluno in alunos %}
+          <tr>
+            <td>{{ aluno.nome }}</td>
+            <td>{{ aluno.endereco }}</td>
+            <td>{{ aluno.cidade }}</td>
+            <td>{{ aluno.email }}</td>
+            <td>{{ aluno.curso }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
